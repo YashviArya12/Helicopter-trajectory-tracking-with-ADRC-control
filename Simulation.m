@@ -1,18 +1,15 @@
-%% ==========================================
-% HELICOPTER TRAJECTORY TRACKING ANIMATION
-%% ==========================================
 
-%% Data from Simulink
+% Data from Simulink
 t = out.tout;
 
 pitch_actual = out.pitch.Data;
 yaw_actual   = out.yaw.Data;
 
-%% Desired trajectory
+% Desired trajectory
 pitch_desired = deg2rad(-20 * square((2*pi/20) * t));
 yaw_desired   = deg2rad(-20 * square((2*pi/20) * t));
 
-%% Create XY path
+% Create XY path
 step_size = 0.08;
 
 x_des = zeros(length(t),1);
@@ -31,16 +28,15 @@ for k = 2:length(t)
 
 end
 
-%% Figure
+% Figure
 figure('Color','w','Position',[50 50 1700 850])
 
 for k = 1:5:length(t)
 
     clf
 
-    %% ==========================================================
+
     % LARGE LEFT PLOT : TRAJECTORY + HELICOPTER
-    %% ==========================================================
 
     ax1 = axes('Position',[0.05 0.10 0.58 0.82]);
     hold(ax1,'on')
@@ -119,10 +115,6 @@ for k = 1:5:length(t)
     rotor2_r     = helicopter_parts{5};
     tail_rotor_r = helicopter_parts{6};
 
-    bodyLength  = 8;
-    tailLength  = 5;
-    rotorRadius = 3;
-
     % Draw helicopter
     h5 = fill(body_r(:,1),body_r(:,2),[0.2 0.6 0.9], ...
         'EdgeColor','b','LineWidth',2);
@@ -163,9 +155,7 @@ for k = 1:5:length(t)
          'Location','northeastoutside', ...
          'FontSize',10)
 
-    %% ==========================================================
-    % TOP RIGHT : PITCH
-    %% ==========================================================
+    % PITCH GRAPH
 
     ax2 = axes('Position',[0.70 0.57 0.27 0.33]);
     hold(ax2,'on')
@@ -190,9 +180,8 @@ for k = 1:5:length(t)
         'Location','northeast', ...
         'FontSize',10)
 
-    %% ==========================================================
-    % BOTTOM RIGHT : YAW
-    %% ==========================================================
+   
+    % Yaw Graph
 
     ax3 = axes('Position',[0.70 0.12 0.27 0.33]);
     hold(ax3,'on')
