@@ -59,8 +59,6 @@ for k = 1:5:length(t)
     h4 = plot(ax1,x_act(k),y_act(k), ...
         'ro','MarkerFaceColor','r','MarkerSize',12);
 
-    %% Bigger and clearer helicopter
-
     yaw = yaw_actual(k);
 
     % Main body
