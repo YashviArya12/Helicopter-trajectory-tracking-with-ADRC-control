@@ -1,7 +1,7 @@
-%% Pitch ADRC parameters
+%Pitch ADRC parameters
 
 % Plant parameter (rough estimate)
-b_tetha = 11.575;          % estimated input gain (can be wrong)
+b_tetha = 11.575;          % estimated input gain 
 
 % ESO bandwidth
 wo_pitch = 30;           % observer bandwidth (rad/s)
@@ -15,7 +15,7 @@ beta3_p = wo_pitch^3;
 Kp_p = 27;
 Kd_p = 9;
 
-%% Yaw ADRC parameters
+%Yaw ADRC parameters
 
 % Plant parameter (rough estimate)
 b_psi = 23.148;
